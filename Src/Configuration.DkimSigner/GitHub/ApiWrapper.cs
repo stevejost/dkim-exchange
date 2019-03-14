@@ -13,8 +13,10 @@ namespace Configuration.DkimSigner.GitHub
         public static List<Release> GetAllRelease(bool bIncludePrerelease = false, Version oMinimalVersion = null)
         {
             List<Release> aoRelease = null;
+            
+            string githubRepo = $"/repos/{UserPreferences.Default.GithubUser}/{UserPreferences.Default.GithubRepoName}/releases";
 
-            string sJson = Api.MakeRequest(Api.CreateRequest("/repos/stevejost/dkim-exchange/releases"));
+            string sJson = Api.MakeRequest(Api.CreateRequest(githubRepo));
 
             if (sJson != null)
             {
