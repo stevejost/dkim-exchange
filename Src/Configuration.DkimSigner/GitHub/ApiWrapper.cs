@@ -14,7 +14,7 @@ namespace Configuration.DkimSigner.GitHub
         {
             List<Release> aoRelease = null;
 
-            string sJson = Api.MakeRequest(Api.CreateRequest("/repos/pro/dkim-exchange/releases"));
+            string sJson = Api.MakeRequest(Api.CreateRequest("/repos/stevejost/dkim-exchange/releases"));
 
             if (sJson != null)
             {
